@@ -1,7 +1,7 @@
 name: senecabot
-description: A simple command-line application.
+description: A discord bot that gives you quotes from Seneca The Younger! made in Dart
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+# repository: https://github.com/lovzay/senecabot
 
 environment:
   sdk: ^3.2.3
