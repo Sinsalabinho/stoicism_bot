@@ -8,6 +8,7 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
+  http: ^1.1.2
   nyxx: ^6.1.0
   nyxx_commands: ^6.0.2
   # path: ^1.8.0
