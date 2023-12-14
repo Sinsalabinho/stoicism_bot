@@ -7,7 +7,7 @@ void main() async {
   var author = await quoteFetcher.fetchQuote();
 
   final client =
-      await Nyxx.connectGateway('<TOKEN>', GatewayIntents.allUnprivileged);
+      await Nyxx.connectGateway('TOKEN', GatewayIntents.allUnprivileged);
 
   final botUser = await client.users.fetchCurrentUser();
 
