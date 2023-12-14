@@ -11,11 +11,11 @@ class StoicQuoteFetcher {
           convert.jsonDecode(response.body) as Map<String, dynamic>;
       var text = jsonResponse['text'];
       var author = jsonResponse['author'];
-      print('Text: $text');
-      print('\nAuthor: $author.');
+      var combinedContent = '$text\n-$author';
+      return combinedContent;
     } else {
       print('Request failed with status: ${response.statusCode}');
+      return null;
     }
-    return null;
   }
 }
