@@ -1,20 +1,20 @@
-import 'package:nyxx/nyxx.dart';
+import 'package:http/http.dart' as http;
+import 'dart:io';
+import 'dart:math';
+import 'dart:convert' as convert;
 
-void main() async {
-  final client = await Nyxx.connectGateway(
-    'TOKEN', // Replace this with your bot's token
-    GatewayIntents.allUnprivileged,
-    options: GatewayClientOptions(plugins: [logging, cliIntegration]),
-  );
+void main(List<String> arguments) async {
+  var url = Uri.https('stoic-quotes.com', '/api/quote');
 
-  final botUser = await client.users.fetchCurrentUser();
-
-  client.onMessageCreate.listen((event) async {
-    if (event.mentions.contains(botUser)) {
-      await event.message.channel.sendMessage(MessageBuilder(
-        content: 'Hi There!',
-        replyId: event.message.id,
-      ));
-    }
-  });
+  var response = await http.get(url);
+  if (response.statusCode == 200) {
+    var jsonResponse =
+        convert.jsonDecode(response.body) as Map<String, dynamic>;
+    var text = jsonResponse['text'];
+    var author = jsonResponse['author'];
+    print('Text: $text');
+    print('\nAuthor: $author.');
+  } else {
+    print('Request failed with status: ${response.statusCode}');
+  }
 }
