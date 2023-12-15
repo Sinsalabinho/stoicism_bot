@@ -11,6 +11,7 @@ The Public API used for this bot can be found [here](https://stoic-quotes.com/ap
 
 # Screenshots
 * Successful output
+
 ![image](https://github.com/lovzay/stoicism_bot/assets/60774660/440bd702-80f3-43b4-907d-67bb9274719a)
 
 # How to use
