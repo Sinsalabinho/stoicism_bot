@@ -1,6 +1,8 @@
 # StoicismBot
 A discord bot, made with dart, which provides you Stoicism quotes from Marcus Aurelius, Seneca The Younger, and Epictetus whenever pinged.
+
 Clone this repository and proceed to ***How to use*** section to get started.
+
 The Public API used for this bot can be found [here](https://stoic-quotes.com/api/quote).
 
 # Features
