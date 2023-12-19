@@ -33,7 +33,6 @@ void main() async {
   commands.addCommand(say);
 
   final quoteFetcher = StoicQuoteFetcher();
-  var combinedContent = await quoteFetcher.fetchQuote();
   final client = await Nyxx.connectGateway(
     'Token', //do not publicize your token
     GatewayIntents.allUnprivileged,
@@ -45,6 +44,7 @@ void main() async {
 // mention command
   client.onMessageCreate.listen((event) async {
     if (event.mentions.contains(botUser)) {
+      var combinedContent = await quoteFetcher.fetchQuote();
       await event.message.channel.sendMessage(MessageBuilder(
         content: combinedContent,
         replyId: event.message.id,
