@@ -34,7 +34,7 @@ void main() async {
 
   final quoteFetcher = StoicQuoteFetcher();
   final client = await Nyxx.connectGateway(
-    'MTQxMDY5NzIzMDMwNTcyMjU1OQ.G0K5tJ.x0SfvG88eNULMnFVbVYytwYFktD4mFYJqSJr0s', //do not publicize your token
+    'TOKEN', //do not publicize your token
     GatewayIntents.allUnprivileged,
     options: GatewayClientOptions(
         plugins: [commands, logging, cliIntegration, ignoreExceptions]),
